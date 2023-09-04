@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.PerfilController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="226.0" style="-fx-background-color: #a1b7c6;" BorderPane.alignment="CENTER">
+         <children>
+            <Circle layoutX="112.0" layoutY="188.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+            <Arc layoutX="112.0" layoutY="235.0" length="185.0" radiusX="32.0" radiusY="24.0" startAngle="-2.5" stroke="BLACK" strokeType="INSIDE" type="CHORD" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="262.0" prefHeight="25.0" prefWidth="186.0" text="Perfil">
+               <font>
+                  <Font name="Gill Sans MT" size="21.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane fx:id="cambioClave" prefHeight="523.0" prefWidth="374.0">
+         <children>
+            <VBox layoutX="23.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="110.0" spacing="14.0">
+               <children>
+                  <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="40.0" prefWidth="127.0" text="Nombre:">
+                     <font>
+                        <Font name="Gill Sans MT" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="40.0" prefWidth="127.0" text="Apellido:">
+                     <font>
+                        <Font name="Gill Sans MT" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="40.0" prefWidth="127.0" text="Organización:">
+                     <font>
+                        <Font name="Gill Sans MT" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="40.0" prefWidth="127.0" text="Correo:">
+                     <font>
+                        <Font name="Gill Sans MT" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="40.0" prefWidth="127.0" text="Contraseña:">
+                     <font>
+                        <Font name="Gill Sans MT" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="149.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="175.0" spacing="14.0">
+               <children>
+                  <TextField fx:id="usr_nombre" alignment="CENTER_RIGHT" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="usr_apellido" alignment="CENTER_RIGHT" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="usr_org" alignment="CENTER_RIGHT" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="usr_correo" alignment="CENTER_RIGHT" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="usr_clave" alignment="CENTER_RIGHT" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Button mnemonicParsing="false" onMouseClicked="#cambioClave" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: #ffffff00;" text="Cambiar contraseña" textAlignment="CENTER" textFill="RED" underline="true">
+                     <font>
+                        <Font name="Gill Sans MT" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Button layoutX="125.0" layoutY="394.0" mnemonicParsing="false" onMouseClicked="#regresar" prefHeight="28.0" prefWidth="122.0" style="-fx-background-color: #a1b7c6;" text="Regresar">
+               <font>
+                  <Font name="Gill Sans MT" size="15.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="mostrarClave" layoutX="333.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#mostrarActivado" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
