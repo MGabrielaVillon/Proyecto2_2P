@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.BuscarVehiculoController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="226.0" style="-fx-background-color: #a1b7c6;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="298.0" prefHeight="25.0" prefWidth="186.0" text="Buscar Vehículo">
+               <font>
+                  <Font name="Gill Sans MT" size="21.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/lupa.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="523.0" prefWidth="374.0">
+         <children>
+            <Button layoutX="126.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#regresar" prefHeight="28.0" prefWidth="122.0" style="-fx-background-color: #a1b7c6;" text="Regresar">
+               <font>
+                  <Font name="Gill Sans MT" size="15.0" />
+               </font>
+            </Button>
+            <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="77.0" layoutY="39.0" prefHeight="18.0" prefWidth="127.0" text="Filtrar por:">
+               <font>
+                  <Font name="Gill Sans MT" size="14.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <ComboBox fx:id="tipoVehiculo" layoutX="148.0" layoutY="36.0" onAction="#filtrar" prefWidth="150.0" />
+            <VBox fx:id="vehiculo" alignment="CENTER" layoutX="70.0" layoutY="84.0" prefHeight="292.0" prefWidth="234.0" spacing="15.0" />
+            <Button fx:id="anteriorBoton" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#anterior" style="-fx-background-color: #a1b7c6;" text="&lt;">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="siguienteBoton" layoutX="328.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#siguiente" style="-fx-background-color: #a1b7c6;" text="&gt;">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

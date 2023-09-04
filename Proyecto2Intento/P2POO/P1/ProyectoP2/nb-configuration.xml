@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-shared-configuration>
+    <!--
+This file contains additional configuration written by modules in the NetBeans IDE.
+The configuration is intended to be shared among all the users of project and
+therefore it is assumed to be part of version control checkout.
+Without this configuration present, some functionality in the IDE may be limited or fail altogether.
+-->
+    <properties xmlns="http://www.netbeans.org/ns/maven-properties-data/1">
+        <!--
+Properties that influence various parts of the IDE, especially code formatting and the like. 
+You can copy and paste the single properties, into the pom.xml file and the IDE will pick them up.
+That way multiple projects can share the same settings (useful for formatting rules for example).
+Any value defined here will override the pom.xml file value but is only applicable to the current project.
+-->
+        <netbeans.compile.on.save>all</netbeans.compile.on.save>
+    </properties>
+</project-shared-configuration>
+<target name="package-for-store" depends="jar">
+    <property name="store.jar.name" value="ProyectoP2"/> <!-- Nombre de tu proyecto -->
+    <property name="store.dir" value="store"/>
+    <property name="store.jar" value="${store.dir}/${store.jar.name}.jar"/>
+    <echo message="Packaging ${application.title} into a single JAR at ${store.jar}"/>
+    <delete dir="${store.dir}"/>
+    <mkdir dir="${store.dir}"/>
+    <jar destfile="${store.dir}/temp_final.jar" filesetmanifest="skip">
+        <zipgroupfileset dir="dist" includes="*.jar"/>
+        <zipgroupfileset dir="dist/lib" includes="*.jar"/>
+        <manifest>
+            <attribute name="Main-Class" value="${main.class}"/>
+        </manifest>
+    </jar>
+    <zip destfile="${store.jar}">
+        <zipfileset src="${store.dir}/temp_final.jar"
+        excludes="META-INF/*.SF, META-INF/*.DSA, META-INF/*.RSA"/>
+    </zip>
+    <delete file="${store.dir}/temp_final.jar"/>
+</target>
