@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.DarOfertaController">
+   <right>
+      <StackPane prefHeight="460.0" prefWidth="587.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="586.0" spacing="30.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="15.0">
+                     <children>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Ingresar placa: ">
+                           <font>
+                              <Font name="Gill Sans MT" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="placa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="130.0" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buscar" style="-fx-background-color: #a1b7c6;" text="Buscar">
+                           <font>
+                              <Font name="Gill Sans MT" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="35.0">
+                     <children>
+                        <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="212.0">
+                           <content>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="197.0" spacing="15.0">
+                                 <children>
+                                    <TableView fx:id="tableView" minHeight="-Infinity" prefHeight="255.0" prefWidth="270.0">
+                                       <columns>
+                                          <TableColumn fx:id="cOferta" minWidth="-Infinity" prefWidth="75.0" text="Ofertas" />
+                                          <TableColumn fx:id="cCorreo" minWidth="-Infinity" prefWidth="120.0" text="Contacto" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                        <VBox fx:id="vbox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="277.0" spacing="10.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Precio original -&gt; ">
+                                       <font>
+                                          <Font name="Gill Sans MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="precio">
+                                       <font>
+                                          <Font name="Gill Sans MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <GridPane prefHeight="55.0" prefWidth="260.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="130.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="147.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="valor" GridPane.columnIndex="1" />
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Valor de oferta: ">
+                                       <font>
+                                          <Font name="Gill Sans MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Correo de contacto: " GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Gill Sans MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="correo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" text="Cargue imagen del vehiculo" textAlignment="JUSTIFY">
+                                 <font>
+                                    <Font name="Gill Sans MT" size="14.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onMouseClicked="#subirImagen" text="Subir" />
+                                    <AnchorPane fx:id="imagen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="181.0" />
+                                 </children>
+                              </HBox>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#guardar" text="Guardar" />
+                           </children></VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="40.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#regresar" prefHeight="28.0" prefWidth="122.0" style="-fx-background-color: #a1b7c6;" text="Regresar">
+                           <font>
+                              <Font name="Gill Sans MT" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#ofertar" prefHeight="28.0" prefWidth="122.0" style="-fx-background-color: #a1b7c6;" text="Ofertar">
+                           <font>
+                              <Font name="Gill Sans MT" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </right>
+   <left>
+      <VBox alignment="CENTER" prefHeight="418.0" prefWidth="226.0" style="-fx-background-color: #a1b7c6;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="83.0" text="Ofertas">
+               <font>
+                  <Font name="Gill Sans MT" size="21.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
